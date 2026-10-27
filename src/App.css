@@ -1,0 +1,36 @@
+
+  .esg-orbit {
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    animation: esg-orbit-spin 28s linear infinite;
+  }
+
+  .esg-orbit-item > div {
+    animation: esg-orbit-counter-spin 28s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .esg-orbit,
+    .esg-orbit-item > div {
+      animation: none;
+    }
+  }
+
+@keyframes esg-orbit-rotation {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes esg-orbit-counter-rotation {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: -360deg;
+  }
+}
+

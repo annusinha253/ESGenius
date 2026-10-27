@@ -1,0 +1,16 @@
+1. Overview of kpiLibrary.js
+Purpose
+The kpiLibrary.js file acts as the central library of Key Performance Indicators (KPIs) used in the ESG assessment system.
+A KPI (Key Performance Indicator) is a measurable value used to evaluate an organization's performance in a particular area.
+This file defines the environmental, social, and governance indicators, their input types, units of measurement, and normalization rules.
+
+
+
+2. Overview of normalizationKPI.js
+Purpose
+The normalizationKPI.js file contains the logic used to convert raw KPI values into standardized scores, generally ranging from 0 to 100.
+Different KPIs require different scoring methods. For example, lower energy consumption is generally better, whereas a higher percentage of renewable energy usage is generally better.
+The file provides a normalize() function that accepts two inputs:
+- rawValue: The original value entered by the company.
+- normalization: The scoring configuration associated with that KPI in kpiLibrary.js.
+It returns a normalized score based on the specified rule.
