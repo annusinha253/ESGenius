@@ -4,7 +4,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 
 import { auth, db } from "../../context/firebase";
-import kpiLibrary from "../../configure/kpiLibrary";
+import {kpiLibrary} from "../../configure/kpiLibrary";
 import { getModuleRecommendations } from "../../recommendation/recommendationEngine";
 
 export default function GovernanceInfo() {
