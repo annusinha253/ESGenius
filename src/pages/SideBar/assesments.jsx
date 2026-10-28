@@ -50,15 +50,35 @@ function getModuleScore(data) {
     : null;
 }
 
-function getOverallScore(assessment) {
-  const overall = assessment?.overall;
-  const score =
-    typeof overall === "number" ? overall : overall?.score;
 
-  return typeof score === "number" && Number.isFinite(score)
-    ? score
-    : null;
-}
+const getOverallScore = (assessment) => {
+  // First, read the field saved by finalESGscoring.js
+  const finalScore = assessment?.finalESGScore;
+
+  if (
+    typeof finalScore === "number" &&
+    Number.isFinite(finalScore)
+  ) {
+    return finalScore;
+  }
+
+  // Fallback for assessments using the older structure
+  const overall = assessment?.overall;
+
+  if (typeof overall === "number") {
+    return overall;
+  }
+
+  if (
+    typeof overall?.score === "number" &&
+    Number.isFinite(overall.score)
+  ) {
+    return overall.score;
+  }
+
+  return null;
+};
+
 
 function formatScore(score) {
   return score === null ? "—" : score.toFixed(1);

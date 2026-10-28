@@ -9,7 +9,7 @@ import Social from "./pages/modules/Social";
 import Gov from "./pages/modules/Gov";
 import EnvironmentInfo from "./pages/SideBar/envDashboard";
 import SocialInfo from "./pages/SideBar/socDashboard";
-import GovernanceInfo from "./pages/SideBar/socDashboard";
+import GovernanceInfo from "./pages/SideBar/govDashboard";
 import AssessmentDetails from "./pages/SideBar/assesments";
 
 
